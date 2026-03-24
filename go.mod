@@ -1,4 +1,4 @@
-module protos
+module github.com/Jurest07/protos
 
 go 1.25.5
 

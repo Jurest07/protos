@@ -8,6 +8,8 @@ service Auth {
     rpc Register (RegisterRequest) returns (RegisterResponse);
     rpc Login (LoginRequest) returns (LoginResponse);
     rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+    rpc AddAdmin (AddAdminRequest) returns (AddAdminResponse);
+    rpc RemoveAdmin (RemoveAdminRequest) returns (RemoveAdminResponse);
 }
 
 message RegisterRequest {
@@ -35,5 +37,21 @@ message IsAdminRequest {
 
 message IsAdminResponse {
     bool is_admin = 1; // Indicates whether the user is an admin
+}
+
+message AddAdminRequest {
+   string email = 1; // user ID to validate
+}
+
+message AddAdminResponse {
+    bool status = 1;
+}
+
+message RemoveAdminRequest {
+    string email = 1; // user ID to validate
+}
+
+message RemoveAdminResponse {
+    bool status = 1;
 }
 
